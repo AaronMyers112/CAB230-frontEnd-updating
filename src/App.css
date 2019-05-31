@@ -1,0 +1,202 @@
+
+@media screen and (max-width: 700px)
+{
+  .App-header{
+    display: block;
+  }
+}
+
+@keyframes input_color{
+  from{border-bottom: 1px solid #B7C3F3; color: #6E8496;}
+  to{border-bottom: 1px solid #DD7596; color: #DD7596;}
+}
+
+@keyframes select_color{
+    from{
+        border-top: 1px solid #404E5C;
+        border-bottom: 1px solid #404e5C;
+      }
+    to{
+        border-top: 1px solid #DD7596;
+        border-bottom: 1px solid #DD7596;
+    }
+}
+
+body {
+  background-color: #B7C3F3;
+  font-family: 'Arvo';
+  font-size: 1em;
+} 
+
+table {
+  border-collapse: collapse;
+  background-color: #99B1C8;
+}
+
+td, tr {
+  width: 50%;
+  color: #242C33;
+  height: 10px;
+}
+
+tr {
+  height: 10px;
+  transition: height 0.5s, font-size 0.5s, background-color 0.5s;
+}
+
+tbody>tr:hover {
+  background-color: #718598;
+  height: 35px;
+  font-size: 1.2em;
+}
+
+th {
+  background-color: #404E5C;
+  height: 35px;
+  color: #B7C3F3;
+}
+
+th, td {
+  border-style: none;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #B7C3F3;
+  color: inherit;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  width: 20%;
+  margin: 5px;
+  outline: none;
+  transition: border-bottom 0.5s, color 0.5s;
+}
+
+input::-webkit-input-placeholder {
+  color: #6E8496;
+}
+
+input:focus, input:hover, .search>input:hover, .search>input:focus{
+  border-bottom: 1px solid #DD7596; 
+  color: #DD7596;
+}
+
+button {
+  background-color: transparent;
+  border-style: none;
+  padding: 10px;
+  border: 0.5px solid #B7C3F3;
+  margin: 5px;
+  border-radius: 5px;
+  color: inherit;
+  outline: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover {
+  background-color: #B7C3F3;
+  color: #404E5C;
+}
+
+.body {
+  color: #B7C3F3;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  font-family: 'Arvo';
+  width: 100%;
+  background-color: #404E5C;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #B7C3F3;
+}
+
+.App-header_logo {
+  font-size: calc(10px + 2vmin);
+  padding-left: 5%;
+}
+
+.App-header_form {
+  padding-right: 5%;
+}
+
+.App-header label {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.search {
+  padding: 10px 0px;
+  padding-bottom: 0;
+}
+
+.search>input {
+  border-bottom: 1px solid #404E5C;
+  transition: border-bottom 0.5s, color 0.5s;
+  color: #404E5C;
+}
+
+.search>button, .filter>form>button{
+  border: 1px solid #404E5C;
+  color: #404E5C;
+}
+
+.search>button:hover, .filter>form>button:hover {
+  background-color: #404E5C;
+  color: #B7C3F3;
+}
+
+.filter {
+  padding: 10px 0px;
+}
+
+.filter>form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.filter>form>select {
+  background-color: transparent;
+  border: none;
+  color: #404E5C;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  padding: 6px 5px;
+  top: 50%;
+  margin: 5px;
+  outline: none;
+  border-top: 1px solid #404E5C;
+  border-bottom: 1px solid #404e5C;
+  transition: border-bottom 0.5s, border-top 0.5s;
+}
+
+.filter>form>select:focus, .filter>form>select:hover {
+  border-top: 1px solid #DD7596;
+  border-bottom: 1px solid #DD7596;
+}
+.table {
+  display: flex;
+  width: 100%;
+  align-content: center;
+}
+
+.tableData {
+  width: 80%;
+  margin: auto;
+}
