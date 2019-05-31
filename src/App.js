@@ -53,7 +53,7 @@ function Filters(props) {
 	for(let i = 0; i < 30; i++){
 		numbers.push(i);
 	};
-	for(let y = 1970; y < 2019; y++){
+	for(let y = 2001; y < 2019; y++){
 		years.push(y);
 	};
 
