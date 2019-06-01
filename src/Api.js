@@ -21,23 +21,129 @@ function getData(offence, params) {
 	);
 }
 
+function getArea(){
+	return fetch("https://cab230.hackhouse.sh/areas", {
+		method: "GET",
+		headers: {
+			"Content-type": "application/x-www-form-urlencoded"
+		}
+	})
+	.then((res) => res.json())
+	.then((res) => res.result)
+	.then((result) =>
+		result.map((results) => ({
+			areas: results.areas,
+		})),
+	);
+}
+
+function getAge(){
+	return fetch("https://cab230.hackhouse.sh/ages", {
+		method: "GET",
+		headers: {
+			"Content-type": "application/x-www-form-urlencoded"
+		}
+	})
+	.then((res) => res.json())
+	.then((res) => res.result)
+	.then((result) =>
+		result.map((results) => ({
+			ages: results.ages,
+		}))
+	);
+}
+
+function getGender(){
+	return fetch("https://cab230.hackhouse.sh/genders", {
+		method: "GET",
+		headers: {
+			"Content-type": "application/x-www-form-urlencoded"
+		}
+	})
+	.then((res) => res.json())
+	.then((res) => res.result)
+	.then((result) =>
+		result.map((results) => ({
+			gender: results.gender,
+		}))
+	);
+}
+
+function getYear(){
+	return fetch("https://cab230.hackhouse.sh/years", {
+		method: "GET",
+		headers: {
+			"Content-type": "application/x-www-form-urlencoded"
+		}
+	})
+	.then((res) => res.json())
+	.then((res) => res.result)
+	.then((result) =>
+		result.map((results) => ({
+			year: results.year,
+		}))
+	);
+}
+
 export function useData(search, params)
 {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
+	// const [area, setArea] = useState([]);
 	useEffect(() => {
 		getData(search, params)
 			.then((data) => {
 				setData(data);
-				setLoading(false);
+				// setLoading(false);
 			})
 			.catch((e) => {
 				setLoading(false);
 			});
+		// getArea()
+		// 	.then((area) => {
+		// 		setArea(area);
+		// 		setLoading(false);
+		// 		console.log(area);
+		// 	});
+
 	}, [search, params]);
 	return {
 		loading,
 		data,
+		// area,
+	}
+}
+
+export function useEndPoints()
+{
+	const [area, setArea] = useState([]);
+	const [age, setAge] = useState([]);
+	const [gender, setGender] = useState([]);
+	const [year, setYear] = useState([]);
+	useEffect(() => {
+		getArea()
+			.then((area) => {
+				setArea(area);
+				console.log(area);
+			});
+		getAge()
+			.then((age) => {
+				setAge(age);
+			})
+		getGender()
+			.then((gender) => {
+				setGender(gender);
+			})
+		getYear()
+			.then((year) => {
+				setYear(year);
+			})
+	}, []);
+	return {
+		area,
+		age,
+		gender,
+		year,
 	}
 }
 

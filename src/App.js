@@ -53,7 +53,7 @@ function Filters(props) {
 	for(let i = 0; i < 30; i++){
 		numbers.push(i);
 	};
-	for(let y = 2001; y < 2019; y++){
+	for(let y = 2001; y <= 2019; y++){
 		years.push(y);
 	};
 
@@ -68,15 +68,14 @@ function Filters(props) {
 		  		</select>
 		  		<select onChange={(e) => setAge(e.target.value)}>
 		  			<option value="">Age</option>
-					{numbers.map((numberSet, index) => {
-		  				return(<option key={index} value={numberSet}>{numberSet}</option>)
+		  			<option value="Juvenile">Juvenile</option>
+		  			<option value="Adult">Adult</option>
 		  			})}
 		  		</select>
 		  		<select onChange={(e) => setSex(e.target.value)}>
 		  			<option value="">Gender</option>
 		  			<option value="Male">Male</option>
 		  			<option value="Female">Female</option>
-		  			<option value="other">other</option>
 		  		</select>
 		  		<select onChange={(e) => setYear(e.target.value)}>
 		  			<option value="">Year</option>
